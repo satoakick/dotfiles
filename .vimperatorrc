@@ -1,0 +1,18 @@
+"移動系の設定
+"スクロールをデフォルトの移動量の5倍に設定
+noremap j 5j
+noremap k 5k
+
+"タブの移動(左)
+noremap a gT
+"タブの移動(右)
+noremap s gt
+
+" ヒントモードはアルファベット
+set hintchars=ifjklasdhguonmerwc
+
+
+" hint style
+highlight! Hint font-family: "Bitstream Vera Sans Mono",monaco,monospace; font-size: 12px; font-weight: bold; color: white; background-color: green; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 2px; line-height: 1em;
+set complete=Sht
+set titlestring='Mozilla Firefox'
