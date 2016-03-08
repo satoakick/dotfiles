@@ -5,6 +5,14 @@ omap <silent> <C-e>      :NERDTreeToggle<CR>
 imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
 cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
 
+" インクリメンタルサーチ
+set incsearch
+" 検索マッチテキストをハイライト
+set hlsearch
+" バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+
 
 " 行番号の設定
 set number
@@ -178,6 +186,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 call neobundle#end()
 " ============= My plugin setting END =============
@@ -226,7 +235,14 @@ autocmd vimenter * if !argc() | NERDTree | endif
 " END NerdTree 設定
 "====================
 
-
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
+let g:indent_guides_color_change_percent = 30
+let g:indent_guides_guide_size = 1
 
 " vim引きこもり設定
 " 現在参照しているrubyファイルを実行
