@@ -81,7 +81,12 @@
   " ESCキーをjjに変更
   inoremap jj <Esc>
 
+  " ESCを2回押して検索結果消去
+  nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
+  " TABにて対応ペアにジャンプ
+  nnoremap <Tab> %
+  vnoremap <Tab> %
 
   " ========================================
   " vimshell
@@ -108,30 +113,6 @@
   omap <silent> <C-e>      :NERDTreeToggle<CR>
   imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
   cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
-  " カーソルが外れているときは自動的にnerdtreeを隠す
-  "function! ExecuteNERDTree()
-  "    "b:nerdstatus = 1 : NERDTree 表示中
-  "    "b:nerdstatus = 2 : NERDTree 非表示中
-  " 
-  "    if !exists('g:nerdstatus')
-  "        execute 'NERDTree ./'
-  "        let g:windowWidth = winwidth(winnr())
-  "        let g:nerdtreebuf = bufnr('')
-  "        let g:nerdstatus = 1
-  " 
-  "    elseif g:nerdstatus == 1
-  "        execute 'wincmd t'
-  "        execute 'vertical resize' 0
-  "        execute 'wincmd p'
-  "        let g:nerdstatus = 2
-  "    elseif g:nerdstatus == 2
-  "        execute 'wincmd t'
-  "        execute 'vertical resize' g:windowWidth
-  "        let g:nerdstatus = 1
-  " 
-  "    endif
-  "endfunction
-  "noremap <c-e> :<c-u>:call ExecuteNERDTree()<cr>
   " ========================================
   " END NerdTree
   " ========================================
@@ -284,14 +265,7 @@
   NeoBundle 'vim-scripts/YankRing.vim'
 
   " インデントの可視化
-  NeoBundle 'nathanaelkane/vim-indent-guides'
-    let g:indent_guides_enable_on_vim_startup=1
-    let g:indent_guides_start_level=2
-    let g:indent_guides_auto_colors=0
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
-    let g:indent_guides_color_change_percent = 30
-    let g:indent_guides_guide_size = 1
+  NeoBundle 'Yggdroot/indentLine'
 
   call neobundle#end() "必ずNeoBundle管理のプラグインは'call neobundle#begin()'〜'call neobundle#end()'で囲むこと
 
