@@ -98,7 +98,10 @@
   " ========================================
   " START NerdTree
   " ========================================
+
+  " vimコマンド単独実行時にNERDTreeを自動実行する
   autocmd vimenter * if !argc() | NERDTree | endif
+
   "<C-e>でNERDTreeをオンオフ。いつでもどこでも。
   nmap <silent> <C-e>      :NERDTreeToggle<CR>
   vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
@@ -275,6 +278,10 @@
   NeoBundle 'thinca/vim-quickrun'
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'rking/ag.vim'
+
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'vim-scripts/Align'
+  NeoBundle 'vim-scripts/YankRing.vim'
 
   " インデントの可視化
   NeoBundle 'nathanaelkane/vim-indent-guides'
