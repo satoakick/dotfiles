@@ -104,15 +104,15 @@
   " START NerdTree
   " ========================================
 
-  " vimコマンド単独実行時にNERDTreeを自動実行する
-  autocmd vimenter * if !argc() | NERDTree | endif
+  ""vimコマンド単独実行時にNERDTreeを自動実行する
+  " autocmd vimenter * if !argc() | NERDTree | endif
 
-  "<C-e>でNERDTreeをオンオフ。いつでもどこでも。
-  nmap <silent> <C-e>      :NERDTreeToggle<CR>
-  vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
-  omap <silent> <C-e>      :NERDTreeToggle<CR>
-  imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
-  cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
+  ""<C-e>でNERDTreeをオンオフ。いつでもどこでも。
+  " nmap <silent> <C-e>      :NERDTreeToggle<CR>
+  " vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
+  " omap <silent> <C-e>      :NERDTreeToggle<CR>
+  " imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
+  " cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
   " ========================================
   " END NerdTree
   " ========================================
@@ -257,9 +257,14 @@
   NeoBundle 'Shougo/vimshell.vim'
   NeoBundle 'Shougo/neomru.vim'
   NeoBundle 'thinca/vim-quickrun'
-  NeoBundle 'scrooloose/nerdtree'
-  NeoBundle 'rking/ag.vim'
+  "NeoBundle 'scrooloose/nerdtree'
+  " 試験的にvimfilerを入れてみる
+  NeoBundle "Shougo/vimfiler"
+    let g:vimfiler_as_default_explorer = 1
+    " セーフモード解除
+    let g:vimfiler_safe_mode_by_default = 0
 
+  NeoBundle 'rking/ag.vim'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'vim-scripts/Align'
   NeoBundle 'vim-scripts/YankRing.vim'
