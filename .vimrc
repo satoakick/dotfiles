@@ -257,6 +257,8 @@
   NeoBundle 'Shougo/vimshell.vim'
   NeoBundle 'Shougo/neomru.vim'
   NeoBundle 'thinca/vim-quickrun'
+    let g:quickrun_config={'*': {'split': ''}}
+    set splitbelow
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'rking/ag.vim'
 
