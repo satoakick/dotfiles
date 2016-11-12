@@ -229,6 +229,7 @@
     endif
     "let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
     let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    let g:neocomplcache_force_omni_patterns.go = '\h\w*\.\?'
     "let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
     " For perlomni.vim setting.
@@ -265,6 +266,7 @@
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'vim-scripts/Align'
   NeoBundle 'vim-scripts/YankRing.vim'
+  NeoBundle 'fatih/vim-go'
 
   " インデントの可視化
   NeoBundle 'Yggdroot/indentLine'
